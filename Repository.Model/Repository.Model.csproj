@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AssemblyName>Imprima.Repository.Model</AssemblyName>
+    <RootNamespace>Imprima.Repository.Model</RootNamespace>
+  </PropertyGroup>
+
+</Project>
