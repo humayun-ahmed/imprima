@@ -1,0 +1,47 @@
+﻿@model X.PagedList.IPagedList<Imprima.Repository.Model.Article>
+@{
+	ViewBag.Title = "News Listing";
+}
+@using X.PagedList.Mvc.Core; 
+@using X.PagedList; 
+@{
+	Layout = "_Layout";
+}
+@{
+	ViewBag.Title = "News Title";
+}
+@section header {
+	<h1>
+	</h1>
+}
+<article id="mainArticle">
+	@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+	{
+		<p>
+			Find by title: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+			<input type="submit" value="Search" />
+		</p>
+	}
+	<h1>Articles</h1>
+	
+	<table >
+		<tr>
+			<td>Title</td>
+			<td>Author</td>
+			<td>Description</td>
+			<td>Content</td>
+		</tr>
+		@foreach (var article in Model)
+		{
+			<tr>
+				<td>@article.Title</td>
+				<td>@article.Author</td>
+				<td>@article.Description</td>
+				<td>@article.Content</td>
+			</tr>
+
+		}
+	</table>
+		<br />
+		@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, searchString = ViewBag.CurrentFilter }))
+</article>

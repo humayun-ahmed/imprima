@@ -1,0 +1,62 @@
+﻿@addTagHelper *, ExploreCalifornia
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>News</title>
+<meta name="description" content="A lynda.com example of HTML5 and CSS3">
+<meta name="keywords" content="html5, css3, lynda, local storage, canvas, forms, semantics, web apps">
+<!--make sure mobile devices display the page at the proper scale	-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="/css/main.css" rel="stylesheet" type="text/css" media="screen, projection">
+</head>
+<body id="home" class="no-js">
+<div id="wrapper">
+  <header id="mainHeader"> 
+   <!-- I need this div because IE is an affront to mankind-->
+    <div>
+    <h1>News</h1>
+    </div>
+    </a>
+    <nav id="siteNav">
+      <h1>Articles</h1>
+    </nav>
+  </header>
+  <section id="actionCall">
+      @if(IsSectionDefined("header")) {
+        @RenderSection("header", false)
+      } else {
+        <h1>News</h1>
+      }
+  </section>
+  <div id="contentWrapper">
+  
+      @RenderBody()
+  
+  </div>
+  <footer id="pageFooter">
+  <section id="quickLinks">
+    <ul id="quickNav">
+      
+      <li><a href="contact.htm" title="Contact and support">Contact</a></li>
+    </ul>
+  </section>
+  <section id="footerResources">  
+	<p>
+		Copyright Imprima @DateTime.Now.Year
+	</p>
+  </section>
+  <section id="companyInfo">
+  <h1>Contact</h1>
+  <h2>Imprima</h2>
+  <p>
+  	De Boelelaan 7, 1083 HJ Amsterdam  	
+  </p>
+  </section>
+  </footer>
+</div>
+</body>
+</html>
