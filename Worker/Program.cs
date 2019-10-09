@@ -45,7 +45,7 @@ namespace Imprima.Worker
 				}
 
 				var newsRepository = serviceProvider.GetService<INewsRepository>();
-				await newsRepository.ClearData();
+				await newsRepository.ClearDataAsync();
 				await newsRepository.BulkInsertAsync(articles);
 			}
 			catch (Exception e)

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Model", "Repository.Model\Repository.Model.csproj", "{EBBD385F-1867-4EB8-8729-D3BCE1A7D75B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsWeb", "NewsWeb\NewsWeb.csproj", "{D655E4FD-7EE4-46C4-A7CC-48F528789870}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EBBD385F-1867-4EB8-8729-D3BCE1A7D75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBBD385F-1867-4EB8-8729-D3BCE1A7D75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBBD385F-1867-4EB8-8729-D3BCE1A7D75B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D655E4FD-7EE4-46C4-A7CC-48F528789870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D655E4FD-7EE4-46C4-A7CC-48F528789870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D655E4FD-7EE4-46C4-A7CC-48F528789870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D655E4FD-7EE4-46C4-A7CC-48F528789870}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
