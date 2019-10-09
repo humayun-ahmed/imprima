@@ -9,7 +9,7 @@ namespace Imprima.Repository.Contract
 	{
 		Task<bool> BulkInsertAsync(List<Article> articles);
 		Task<bool> ClearDataAsync();
-		IQueryable<Article> Search(string title);
+		IQueryable<Article> Search(string title, bool cacheEnable = false);
 
 	}
 }

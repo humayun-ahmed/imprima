@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LocalCache\LocalCache.csproj" />
     <ProjectReference Include="..\Repository.Model\Repository.Model.csproj" />
   </ItemGroup>
 

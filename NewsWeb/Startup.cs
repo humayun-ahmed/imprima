@@ -7,6 +7,8 @@ using AutoMapper;
 using Imprima.Repository;
 using Imprima.Repository.Contract;
 using Imprima.Repository.Model;
+using Infrastructure.LocalCache;
+using Infrastructure.LocalCache.Contract;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,22 +33,16 @@ namespace NewsWeb
 		// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 		public void ConfigureServices(IServiceCollection services)
 		{
-			// Add logging
-			/*services.AddSingleton(new LoggerFactory()
-				.AddSerilog()
-			);
-			services.AddLogging();*/
-			
-
 			// Add services
 			services.AddScoped<INewsRepository, NewsRepository>();
-			services.AddSingleton(ConfigMapper());
+			services.AddSingleton<ILocalCacheService, LocalCacheService>();
 
 			services.AddDbContext<NewsDbContext>(options =>
 			{
 				var connectionString = configuration.GetConnectionString("NewsDbContext");
 				options.UseSqlServer(connectionString);
 			});
+			
 			services.AddMvc();
 		}
 
@@ -69,16 +65,6 @@ namespace NewsWeb
 			});
 
 			app.UseFileServer();
-		}
-		private static IMapper ConfigMapper()
-		{
-			var config = new MapperConfiguration(cfg =>
-			{
-				//cfg.CreateMap<ArticleDto, Article>();
-				//cfg.CreateMap<SourceDto, Source>();
-			});
-			IMapper iMapper = config.CreateMapper();
-			return iMapper;
 		}
 	}
 }

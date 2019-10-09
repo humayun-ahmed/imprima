@@ -8,6 +8,8 @@ using Imprima.ExternalService.Dto;
 using Imprima.Repository;
 using Imprima.Repository.Contract;
 using Imprima.Repository.Model;
+using Infrastructure.LocalCache;
+using Infrastructure.LocalCache.Contract;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -85,6 +87,8 @@ namespace Imprima.Worker
 			serviceCollection.AddSingleton<INewsService, NewsService>();
 			serviceCollection.AddScoped<INewsRepository, NewsRepository>();
 			serviceCollection.AddSingleton(ConfigMapper());
+			serviceCollection.AddSingleton<ILocalCacheService, LocalCacheService>();
+
 
 			serviceCollection.AddDbContext<NewsDbContext>(options =>
 			{

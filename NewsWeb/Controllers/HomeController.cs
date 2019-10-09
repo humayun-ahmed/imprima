@@ -19,7 +19,7 @@ namespace NewsWeb.Controllers
 	    }
         public IActionResult Index(int? page, string searchString)
         {
-			var news = _newsRepository.Search(searchString);
+			var news = _newsRepository.Search(searchString, true);
 			var pageNumber = page ?? 1; // if no page was specified in the querystring, default to the first page (1)
 			var articles = news.ToPagedList(pageNumber, 5); // will only contain 5 products max because of the pageSize
 			return View(articles);

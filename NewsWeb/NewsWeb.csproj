@@ -20,8 +20,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LocalCache\LocalCache.csproj" />
     <ProjectReference Include="..\Repository.Model\Repository.Model.csproj" />
     <ProjectReference Include="..\Repository\Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="LocalCache\" />
   </ItemGroup>
 
 </Project>
